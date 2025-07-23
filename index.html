@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VI Congreso Internacional de Relaciones Laborales</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Definición de colores de la identidad visual */
+        :root {
+            --color-verde: #0f730b;
+            --color-azul: #03028e;
+            --color-gris: #f0f0f0; /* Fondo principal de la página */
+            --color-gris-claro: #f8f8f8; /* Un gris aún más claro para elementos internos */
+        }
+
+        /* Estilos personalizados para la fuente Poppins */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-gris); /* Fondo general de la página */
+            color: #333; /* Color de texto por defecto */
+        }
+
+        /* Estilo para el overlay del banner */
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.65); /* Un poco más oscuro para mejor contraste */
+        }
+
+        /* Ajuste de altura de línea para el título principal */
+        .hero-title {
+            line-height: 1.3; /* Aumentado el valor para separar más los renglones */
+        }
+
+        /* Estilo para los botones */
+        .btn-primary {
+            background-color: var(--color-azul);
+            color: white;
+            font-weight: 600; /* Semi-bold */
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* Fully rounded */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-verde); /* Cambia a verde en hover */
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Estilo para las "cajas" de los pasos de "Cómo participar" */
+        .step-card {
+            background-color: #fff;
+            padding: 2.5rem; /* Aumentado el padding para más aire */
+            border-radius: 1rem; /* Más redondeado */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+            border: 2px solid var(--color-azul); /* Borde más grueso y azul */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px); /* Efecto hover sutil */
+        }
+        .step-number {
+            font-size: 3.5rem; /* Número más grande */
+            font-weight: 800; /* Extra bold */
+            color: var(--color-azul); /* Color azul para los números */
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .step-title {
+            font-size: 1.5rem; /* Título del paso más grande */
+            font-weight: 700; /* Bold */
+            color: #1f2937; /* Gris oscuro para el título */
+            margin-bottom: 0.5rem;
+        }
+        .step-description {
+            font-size: 1rem;
+            color: #4b5563; /* Gris medio para la descripción */
+            line-height: 1.5;
+        }
+
+        /* Estilos específicos para la agenda (Bloque 4) */
+        .agenda-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1rem; /* Espacio entre ítems */
+        }
+        .agenda-item:last-child {
+            margin-bottom: 0; /* No hay margen inferior en el último elemento */
+        }
+        .agenda-time {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            color: var(--color-azul);
+            margin-bottom: 0.5rem;
+        }
+        .agenda-title {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: var(--color-verde); /* Títulos de agenda en verde */
+            margin-bottom: 0.5rem;
+        }
+        .agenda-speakers, .agenda-moderator {
+            font-size: 1rem; /* text-base */
+            color: #4b5563;
+        }
+        .agenda-speakers strong, .agenda-moderator strong {
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header con el logo centrado -->
+    <header class="bg-white py-4 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
+            <img src="https://placehold.co/150x50/03028e/FFFFFF?text=LOGO" alt="Logo del Congreso" class="h-12 w-auto">
+        </div>
+    </header>
+
+    <!-- BLOQUE 1 – Banner principal (Hero) -->
+    <section class="relative bg-cover bg-center h-screen flex items-center justify-center text-white rounded-b-xl shadow-2xl overflow-hidden"
+        style="background-image: url('image_cab36f.jpg');">
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 hero-overlay rounded-b-xl"></div>
+        <div class="relative z-10 text-center p-6 sm:p-8 md:p-12 max-w-5xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold hero-title mb-4 drop-shadow-lg rounded-lg">
+                VI Congreso Internacional de Relaciones Laborales
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl font-medium mb-10 drop-shadow-md rounded-lg">
+                16 de agosto de 2025 · 10:00 a 16:00 h · Modalidad híbrida
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeemRtr56aHOGKLNvoZw2f3GqVrSrsEFS8Z7wi13oPk9XcSw/viewform?usp=header" class="btn-primary" target="_blank">
+                Inscribite ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- BLOQUE 2 – Presentación del Congreso -->
+    <section class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8" style="color: var(--color-azul);">
+                Acerca del Congreso
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                El VI Congreso Internacional de Relaciones Laborales es un evento que reúne a <strong>expertos, académicos y profesionales</strong> para analizar las <strong>transformaciones más recientes en el ámbito laboral</strong>.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Este año, nos enfocamos en la <strong>innovación y los desafíos</strong> que emergen en un mundo del trabajo en constante evolución. Exploraremos temas como la <strong>digitalización, la inteligencia artificial, nuevas formas de contratación y el impacto de la globalización</strong> en las relaciones laborales.
+                Nuestro objetivo es fomentar el <strong>diálogo, el intercambio de conocimientos y la búsqueda de soluciones innovadoras</strong> para construir un futuro laboral más justo y equitativo.
+            </p>
+        </div>
+    </section>
+
+    <!-- BLOQUE 3 – Modalidad -->
+    <section class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center" style="color: var(--color-azul);">
+                Modalidad y ubicación
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-12 text-center">
+                Podés participar desde donde estés. Este año el Congreso se realiza en formato híbrido, con dos opciones de asistencia:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Opción Presencial -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-10 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-5 flex items-center">
+                        <span class="text-4xl mr-4" style="color: var(--color-verde);">🏢</span> Presencial
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                        📍 Hotel IBIS – La Cumparsita 1473, Montevideo
+                    </p>
+                </div>
+                <!-- Opción Virtual -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-10 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-5 flex items-center">
+                        <span class="text-4xl mr-4" style="color: var(--color-azul);">💻</span> Virtual
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                        Transmisión en vivo vía Zoom (el enlace se enviará por mail una vez confirmada la inscripción)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 4 – Agenda completa -->
+    <section class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center" style="color: var(--color-azul);">
+                🗓️ Programa del Congreso
+            </h2>
+            <div class="space-y-4">
+                <!-- Item de Agenda: Acreditaciones -->
+                <div class="agenda-item">
+                    <p class="agenda-time">10:00 – 10:30</p>
+                    <p class="agenda-title">Acreditaciones</p>
+                </div>
+                <!-- Item de Agenda: Mesa de apertura -->
+                <div class="agenda-item">
+                    <p class="agenda-time">10:30 – 11:00</p>
+                    <p class="agenda-title">Mesa de apertura</p>
+                    <p class="agenda-speakers"><strong>Panelistas:</strong> Alejandro Márquez, Hugo Barretto, Leticia Iglesias, Alfredo Lemarquant</p>
+                    <p class="agenda-moderator"><strong>Modera:</strong> Jessica Collazo</p>
+                </div>
+                <!-- Item de Agenda: Desafíos de la 11.ª Ronda de Consejos de Salarios -->
+                <div class="agenda-item">
+                    <p class="agenda-time">11:00 – 12:00</p>
+                    <p class="agenda-title">Desafíos de la 11.ª Ronda de Consejos de Salarios</p>
+                    <p class="agenda-speakers"><strong>Panelistas:</strong> DINATRA, PIT-CNT, Gustavo Igarza, Jorge García Calvo</p>
+                    <p class="agenda-moderator"><strong>Modera:</strong> Mariana Montero</p>
+                </div>
+                <!-- Item de Agenda: Pausa -->
+                <div class="agenda-item">
+                    <p class="agenda-time">12:00 – 13:00</p>
+                    <p class="agenda-title">Pausa</p>
+                </div>
+                <!-- Item de Agenda: Bienestar Organizacional en Tiempos Híbridos -->
+                <div class="agenda-item">
+                    <p class="agenda-time">13:00 – 14:15</p>
+                    <p class="agenda-title">Bienestar Organizacional en Tiempos Híbridos</p>
+                    <p class="agenda-speakers"><strong>Panelistas:</strong> Matías De La Palenque (AR), Jorge Duarte (UY), Ingrid Naranjo (CR), Marisa Naranjo (ES), Pilar Muñoz Jaramillo (CO)</p>
+                    <p class="agenda-moderator"><strong>Modera:</strong> Eleonora Travieso</p>
+                </div>
+                <!-- Item de Agenda: Inteligencia Artificial y Futuro del Trabajo -->
+                <div class="agenda-item">
+                    <p class="agenda-time">14:15 – 15:15</p>
+                    <p class="agenda-title">Inteligencia Artificial y Futuro del Trabajo</p>
+                    <p class="agenda-speakers"><strong>Panelistas:</strong> Juan Raso (UY), Didier Muñoz (CO), Ramiro Marchesotti (AR)</p>
+                    <p class="agenda-moderator"><strong>Modera:</strong> Ana Laura López</p>
+                </div>
+                <!-- Item de Agenda: Mesa de cierre -->
+                <div class="agenda-item">
+                    <p class="agenda-time">15:15 – 15:45</p>
+                    <p class="agenda-title">Mesa de cierre</p>
+                    <p class="agenda-speakers"><strong>Panelistas:</strong> Joaquín Perrone, Juan Raso, Alejandro Márquez</p>
+                    <p class="agenda-moderator"><strong>Modera:</strong> Jessica Collazo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 5 – Costos y formas de pago -->
+    <section class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center" style="color: var(--color-azul);">
+                Costos de inscripción
+            </h2>
+            <ul class="space-y-6 text-lg text-gray-700 mb-12">
+                <li class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 flex items-start space-x-4">
+                    <span class="text-3xl flex-shrink-0" style="color: var(--color-verde);">✅</span>
+                    <div class="flex flex-col text-left flex-grow">
+                        <span class="text-lg text-gray-700">Socios/as ALRLU:</span>
+                        <span class="font-bold text-xl text-gray-900">Gratis</span>
+                    </div>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 flex items-start space-x-4">
+                    <span class="text-3xl flex-shrink-0" style="color: var(--color-verde);">🎓</span>
+                    <div class="flex flex-col text-left flex-grow">
+                        <span class="text-lg text-gray-700">Estudiantes de RRLL o instituciones con convenio ALRLU:</span>
+                        <span class="font-bold text-xl text-gray-900">$1.000</span>
+                    </div>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 flex items-start space-x-4">
+                    <span class="text-3xl flex-shrink-0" style="color: var(--color-verde);">👥</span>
+                    <div class="flex flex-col text-left flex-grow">
+                        <span class="text-lg text-gray-700">No socios/as:</span>
+                        <span class="font-bold text-xl text-gray-900">$2.000</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-5">Datos de pago:</h3>
+                <p class="text-lg text-gray-700">
+                    🏦 Cuenta BROU – Caja de Ahorro en $: <span class="font-mono bg-gray-50 p-2 rounded-md font-semibold text-gray-900 shadow-inner">110240083-00001</span>
+                </p>
+            </div>
+
+            <div class="bg-white p-10 rounded-xl shadow-lg border border-gray-100">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-5">Importante:</h3>
+                <!-- Texto de "Una vez realizado el pago..." alineado a la izquierda -->
+                <p class="text-lg text-gray-700 text-left mb-6">
+                    Una vez realizado el pago, enviá tu comprobante, certificado de estudiante o constancia de convenio a:
+                </p>
+                <!-- Icono y mail en líneas distintas y centrados -->
+                <p class="text-xl font-bold text-center" style="color: var(--color-azul);">
+                    <span class="text-3xl block mb-2">📩</span>
+                    <a href="mailto:congresorrll@gmail.com" class="hover:underline break-all">congresorrll@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 6 – ¿Cómo inscribirte? -->
+    <section id="inscripcion" class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10" style="color: var(--color-azul);">
+                ✍️ ¿Cómo participar?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-12">
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Elegí tu modalidad</h3>
+                    <p class="step-description">Presencial u online.</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Realizá el pago</h3>
+                    <p class="step-description">Si corresponde.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Enviá la documentación</h3>
+                    <p class="step-description">Solicitada.</p>
+                </div>
+                <!-- Paso 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Recibí la confirmación</h3>
+                    <p class="step-description">Y, si te inscribiste virtual, el link de Zoom.</p>
+                </div>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeemRtr56aHOGKLNvoZw2f3GqVrSrsEFS8Z7wi13oPk9XcSw/viewform?usp=header" class="btn-primary" target="_blank">
+                Quiero inscribirme
+            </a>
+        </div>
+    </section>
+
+    <!-- BLOQUE 7 – Contacto -->
+    <section class="py-16 px-6 sm:px-8 md:px-12 mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-8"
+             style="background-color: var(--color-gris);">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8" style="color: var(--color-azul);">
+                📬 ¿Tenés dudas o necesitás más información?
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                Estamos para ayudarte. Escribinos a:
+            </p>
+            <!-- Icono y mail en líneas distintas y centrados -->
+            <p class="text-xl font-bold text-center" style="color: var(--color-azul);">
+                <span class="text-3xl block mb-2">📩</span>
+                <a href="mailto:congresorrll@gmail.com" class="hover:underline break-all">congresorrll@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm bg-gray-100 rounded-t-xl shadow-inner">
+        <p>&copy; 2025 ALRLU. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
