@@ -119,6 +119,29 @@
         .agenda-speakers strong, .agenda-moderator strong {
             color: #1f2937;
         }
+
+        /* Estilos para el banner responsivo */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* O la altura que desees para el banner */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-white rounded-b-xl shadow-2xl overflow-hidden;
+        }
+
+        /* Imagen para móvil por defecto (hasta 767px) */
+        .hero-section {
+            background-image: url('banner-mobile.jpg'); /* Nombre de tu imagen para móvil */
+        }
+
+        /* Imagen para escritorio (a partir de 768px, que es el breakpoint 'md' de Tailwind) */
+        @media (min-width: 768px) {
+            .hero-section {
+                background-image: url('banner-desktop.jpg'); /* Nombre de tu imagen para escritorio */
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -131,8 +154,7 @@
     </header>
 
     <!-- BLOQUE 1 – Banner principal (Hero) -->
-    <section class="relative bg-cover bg-center h-screen flex items-center justify-center text-white rounded-b-xl shadow-2xl overflow-hidden"
-        style="background-image: url('image_cab36f.jpg');">
+    <section class="relative hero-section rounded-b-xl shadow-2xl overflow-hidden">
         <!-- Overlay oscuro -->
         <div class="absolute inset-0 hero-overlay rounded-b-xl"></div>
         <div class="relative z-10 text-center p-6 sm:p-8 md:p-12 max-w-5xl mx-auto">
@@ -193,7 +215,7 @@
                     <p class="text-lg text-gray-700">
                         Transmisión en vivo vía Zoom (el enlace se enviará por mail una vez confirmada la inscripción)
                     </p>
-                </div>
+                </p>
             </div>
         </div>
     </section>
